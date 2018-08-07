@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <title> Kingdomino </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheets/style.css" media="screen">
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <form class="login_form" method="post" action='/'>
+                <h1 id="login_title"> Login </h1>
+                <input class = "login_button input_field" type = "text" placeholder = "Username ..."  name="user[name]"> </input>
+                <br>
+                <input class = "login_button input_field" type="password" placeholder = "Password ..." name="user[password]"> </input>
+                <br>
+                <input class = "login_button" type="submit" formaction="/login" value="Log in"> </input>
+                <br>
+                <input class = "login_button" type="submit" value="Forgot Password" disabled> </input>
+                <br>
+                <br>
+                <input class = "login_button" type="submit" value="Play Without Login" disabled> </input>
+                <br>
+                <input class = "login_button" type="submit" value="Register" disabled> </input>
+                <br>
+                <input class = "login_button" type="button" onclick="location.href='http://google.com'" value="Quit"> </input> </a>
+            </form>
+        </div>
+    </body>
+</html>
