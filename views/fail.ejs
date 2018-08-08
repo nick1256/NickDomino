@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title> Nickdomino </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheets/style.css" media="screen">
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <form class="login_form" method="post">
+                <h1 id="login_title"> Login </h1>
+                <h2 id="failed_login"> Incorrect credentials </h2>
+                <input class = "login_button input_field" type="text" placeholder = "Username ..."  name="username"> </input>
+                <br>
+                <input class = "login_button input_field" type="password" placeholder = "Password ..." name="password"> </input>
+                <br>
+                <input class = "login_button" type="submit" formaction="/login" value="Log In"> </input>
+                <br>
+                <input class = "login_button" type="submit" formaction="/pryc" value="Forgot Password" disabled> </input>
+                <br>
+                <br>
+                <input class = "login_button" type="submit" value="Register" disabled> </input>
+                <br>
+                <input class = "login_button" type="submit" value="Try As Guest" disabled> </input>
+            </form>
+        </div>
+    </body>
+</html>

@@ -2,22 +2,22 @@
 <html lang="en">
     
     <head>
-        <title> Kingdomino </title>
+        <title> Nickdomino </title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="stylesheets/style.css" media="screen">
     </head>
 
     <body>
         <div class="sidebar">
-            <form class="login_form" method="post" action='/'>
+            <form class="login_form" method="post">
                 <h1 id="login_title"> Login </h1>
-                <input class = "login_button input_field" type = "text" placeholder = "Username ..."  name="user[name]"> </input>
+                <input class = "login_button input_field" type="text" placeholder = "Username ..."  name="username"> </input>
                 <br>
-                <input class = "login_button input_field" type="password" placeholder = "Password ..." name="user[password]"> </input>
+                <input class = "login_button input_field" type="password" placeholder = "Password ..." name="password"> </input>
                 <br>
-                <input class = "login_button" type="submit" formaction="/login" value="Log in"> </input>
+                <input class = "login_button" type="submit" formaction="/login" value="Log In"> </input>
                 <br>
-                <input class = "login_button" type="submit" value="Forgot Password" disabled> </input>
+                <input class = "login_button" type="submit" formaction="/pryc" value="Forgot Password" disabled> </input>
                 <br>
                 <br>
                 <input class = "login_button" type="submit" value="Play Without Login" disabled> </input>
