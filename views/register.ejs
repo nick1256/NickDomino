@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <title> Nickdomino </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/stylesheets/login.css" media="screen">
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <form class="login_form" method="post">
+                <h1 id="login_title"> Sign Up: </h1>
+
+                <%# Display error that occured if there was failed signup attempt %>
+                <% if (locals.passmismatch) { %>
+                    <h2 class="failed_login" > Passwords did not match </h2>
+                <%} else if (locals.userexists) { %>
+                    <h2 class="failed_login" > Username already exists </h2>
+                <%} else if (locals.emailexists) { %>
+                    <h2 class="failed_login" > E-mail already exists </h2>
+                <%} %>
+
+                <input required class = "login_button input_field" type="text" placeholder = "Username ..." name="username"
+                    <% if(locals.uname) %> value = <%- locals.uname %>> 
+                </input>
+                <br>
+
+                <input required class = "login_button input_field" type="password" placeholder = "Password ..." name="password"> </input>
+                <br>
+
+                <input required class = "login_button input_field" type="password" placeholder = "Confirm Password ..." name="password2"> </input>
+                <br>
+
+                <input required class = "login_button input_field" type="text" placeholder = "E-mail ..." name="email" 
+                    <% if(locals.email) %> value = <%- locals.email %>>
+                </input>
+                <br>
+
+                <br>
+                <input id = "signup_button" class = "login_button" formaction="/register/signup" type="submit" name="signup"> </input>
+
+            </form>
+        </div>
+    </body>
+</html>

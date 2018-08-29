@@ -4,27 +4,35 @@
     <head>
         <title> Nickdomino </title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="stylesheets/style.css" media="screen">
+        <link rel="stylesheet" href="/stylesheets/login.css" media="screen">
     </head>
 
     <body>
         <div class="sidebar">
             <form class="login_form" method="post">
                 <h1 id="login_title"> Login </h1>
-                <input class = "login_button input_field" type="text" placeholder = "Username ..."  name="username"> </input>
+                
+                <%# Display "Incorrect credentials" if a failed login has occured%>
+                
+                <% if(locals.invaliduser) { %>
+                    <h2 class="failed_login"> Invalid credentials </h2>
+                <% } %>
+
+                <%# If unsuccessful login attemp was issued replace placeholder with the attempted username %>
+                <input required class = "login_button input_field" type="text" placeholder = "Username ..." name="username"
+                    <% if(locals.uname) %> value = <%- locals.uname %>>
+                </input>
                 <br>
-                <input class = "login_button input_field" type="password" placeholder = "Password ..." name="password"> </input>
+                <input required class = "login_button input_field" type = "password" placeholder = "Password ..." name = "password"> </input>
                 <br>
-                <input class = "login_button" type="submit" formaction="/login" value="Log In"> </input>
+                <input class = "login_button" type = "submit" formaction = "/login" value = "Log In"> </input>
+            </form>
+            <form class = "login_form" id = "second_login_form" method = "post">
+                <input class = "login_button" type = "submit" formaction = "/forgot" value = "Forgot credentials"> </input>
                 <br>
-                <input class = "login_button" type="submit" formaction="/pryc" value="Forgot Password" disabled> </input>
+                <input class = "login_button" type = "submit" formaction = "/register" value = "Register"> </input>
                 <br>
-                <br>
-                <input class = "login_button" type="submit" value="Play Without Login" disabled> </input>
-                <br>
-                <input class = "login_button" type="submit" value="Register" disabled> </input>
-                <br>
-                <input class = "login_button" type="button" onclick="location.href='http://google.com'" value="Quit"> </input> </a>
+                <input class = "login_button" type = "submit" formaction = "/guest" value="Play Without Login"> </input>
             </form>
         </div>
     </body>

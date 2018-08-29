@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <title> Nickdomino </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/stylesheets/login.css" media="screen">
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <form class="login_form" method="post">
+                <h2 id="login_title"> Please enter your e-mail </h2>
+                
+                <%# Display "Incorrect credentials" if a failed login has occured%>
+                
+                <% if(locals.noaccount) { %>
+                    <h2 class="failed_login"> There is no account associated with this e-mail. </h2>
+                <% } %>
+
+                <%# If unsuccessful login attemp was issued replace placeholder with the attempted e-mail %>
+                <input required class = "login_button input_field" type="text" placeholder = "E-mail ..." name="email"
+                    <% if(locals.email) %> value = <%- locals.email %>>
+                </input>
+                <br>
+
+                <input class = "login_button" type = "submit" formaction = "/forgot/send" value="Send Credentials"> </input>
+            </form>
+        </div>
+    </body>
+</html>
